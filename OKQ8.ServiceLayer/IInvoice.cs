@@ -17,5 +17,10 @@ namespace OKQ8.ServiceLayer
         /// either get all transactions included in the invoice 
         /// or get the invoice as a pdf (byte stream)
 
+        SearchResponse<Document> GetDocuments(int skip, int take, DocumentFilter filter, DocumentSortOrder orderBy, SortDirection direction);
+
+        // Either send document as object or documentId
+        void ReportError(Document document, DocumentErrorType errorType, string errorDescription);
     }
+
 }
