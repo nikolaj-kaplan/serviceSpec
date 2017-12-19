@@ -18,19 +18,4 @@ namespace OKQ8.ServiceLayer
         /// or get the invoice as a pdf (byte stream)
 
     }
-
-    public interface IGeneral
-    {
-        sendSMSResponse1 SendSms(string q8UserName, string q8Password, string to, string type, string from, string text);
-        wsSuccess CreateCustomerServiceTask(string token, q8KCTasks q8KCTasks, string custNo, string email, string text);
-        getAuditResponse1 GetAudit(string token, TimePeriod period, string operation, string @object, string user, int maxcount, int samAccount);
-    }
-
-    public interface IAccount
-    {
-        getHAccountsResponse1 GetHAccounts(string token, allowAccountTypes type);
-        getUAccountsResponse1 GetUAccounts(string token);
-    }
-
-
 }
