@@ -1,12 +1,16 @@
+using System;
+
 namespace OKQ8.ServiceLayer
 {
     public class TransactionFilter
     {
         public string ProductName;
         public bool? IsFuelPurchase;
-        public RequestParameters Request;
-        public OrderField OrderBy;
+        public string[] CardOrAccountNumbers;
+        public bool? Invoiced { get; set; }
         public CardType? CardType;
         public string InternalNumber;
+        public DateTime? From;
+        public DateTime? To;
     }
 }
