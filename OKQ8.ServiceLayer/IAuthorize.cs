@@ -50,6 +50,15 @@ namespace OKQ8.ServiceLayer
         IEnumerable<Company> GetCompanies();
 
         /// <summary>
+        /// Returns all companies that matches the search text. A partial match on organization number, company name, phone number, etc...
+        /// Used by sysadmin 
+        /// </summary>
+        /// <param name="SearchText"></param>
+        /// <returns></returns>
+        SearchResponse<Company> GetCompanies(string SearchText, int skip, int take);
+
+
+        /// <summary>
         /// Returns true if the current user has sysadmin rights
         /// Can be called without having a context company
         /// If the user is sysAdmin, they will be able to choose to access the portal in context of any company. 

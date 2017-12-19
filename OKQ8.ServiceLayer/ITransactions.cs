@@ -14,5 +14,8 @@ namespace OKQ8.ServiceLayer
         SearchResponse<Transaction> GetCardTransactions(TransactionFilter filter, TransactionSortOrder orderBy, SortDirection sortDirection);
 
         TransactionDetails GetTransactionDetails(Guid transactionId);
+
+        // TODO: Service to support summaries in intervals. For graphs and summaries
+        // https://gg7ptb.axshare.com/6_0_k_bekort__korttransaktioner_.html
     }
 }

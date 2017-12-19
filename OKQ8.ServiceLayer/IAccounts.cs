@@ -6,7 +6,8 @@ namespace OKQ8.ServiceLayer
         /// Returns the root of the tree. OrgNumber (SE) ? / SamAccount (DK).
         /// Including all children. No lazy load. Unless it is necessary due to performance
         /// </summary>
-        /// <returns></returns>
         Account GetAccountTree();
+
+
     }
 }
