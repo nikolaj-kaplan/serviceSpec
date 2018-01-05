@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
+using OKQ8.ServiceLayer.DTO;
 
-namespace OKQ8.ServiceLayer
+namespace OKQ8.ServiceLayer.Services
 {
     public interface ITransactions
     {
@@ -10,10 +10,7 @@ namespace OKQ8.ServiceLayer
         /// to group by fuel type and/or card number
         /// </summary>
         IEnumerable<LiterCount> GetLiterCount(TransactionFilter filter);
-
         SearchResponse<Transaction> GetCardTransactions(TransactionFilter filter, TransactionSortOrder orderBy, SortDirection sortDirection);
-
-        TransactionDetails GetTransactionDetails(Guid transactionId);
 
         // TODO: Service to support summaries in intervals. For graphs and summaries
         // https://gg7ptb.axshare.com/6_0_k_bekort__korttransaktioner_.html
