@@ -10,7 +10,7 @@ namespace OKQ8.ServiceLayer.DTO
         public bool? Invoiced { get; set; }
         public CardType? CardType;
         public string InternalNumber;
-        public DateTime? From;
-        public DateTime? To;
+        public DateTime From;
+        public DateTime To;
     }
 }
