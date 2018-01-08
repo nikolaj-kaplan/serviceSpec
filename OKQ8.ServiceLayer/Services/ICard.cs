@@ -10,7 +10,7 @@ namespace OKQ8.ServiceLayer
         /// Returns the cards that matches the filter.
         /// Performance is critical
         /// </summary>
-        SearchResponse<Card> GetCards(int skip, int take, CardFilter filter, CardSortOrder orderBy, SortDirection direction);
+        CardSearchResponse GetCards(int skip, int take, CardFilter filter, CardSortOrder orderBy, SortDirection direction);
 
         void OrderCard(string accountNumber, CardType cardType, string cardName, string email, string messageToQ8);
 
@@ -38,6 +38,17 @@ namespace OKQ8.ServiceLayer
         /// https://gg7ptb.axshare.com/6_3_kreditlimit.html
         /// 
     }
+
+    public class CardSearchResponse
+    {
+        public SearchResponse<Card> SearchResponse;
+
+        /// <summary>
+        /// Keys are the card types and values are the count of each card type.
+        /// </summary>
+        public Dictionary<string, int> CardTypeCount;
+    }
+
 
     public class TransactionUpdatedInfo
     {
