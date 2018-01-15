@@ -49,9 +49,6 @@ namespace OKQ8.ServiceLayer
         /// </summary>
         /// <returns></returns>
         TransactionUpdatedInfo GetUpdateDate();
-
-        /// TODO: 
-        /// Kredit limit
     }
 
 
