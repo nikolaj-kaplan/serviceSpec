@@ -1,11 +1,13 @@
 namespace OKQ8.ServiceLayer.DTO
 {
     /// <summary>
-    /// From DK portal. Not necessary in phase 1?
+    /// ... what types do we have. See "Företagstyp" here: https://53c0ru.axshare.com/5_0_virksomhedsprofil__stamdata_.html
     /// </summary>
     public enum CompanyType
     {
-        Business,
+        Aktiebolag,
+        CompanyType2, //?
+        CompanyType3, //?
         Consumer
     }
 }

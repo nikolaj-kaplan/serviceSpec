@@ -12,13 +12,35 @@ namespace OKQ8.ServiceLayer
         /// </summary>
         CardSearchResponse GetCards(int skip, int take, CardFilter filter, CardSortOrder orderBy, SortDirection direction);
 
-        void OrderCard(string accountNumber, CardType cardType, string cardName, string email, string messageToQ8);
+        //https://gg7ptb.axshare.com/6_1_2_nyt_kort.html
+        void OrderCard(
+            string accountNumber, 
+            CardType cardType, 
+            string textField2, // https://i.imgur.com/XxucaFe.png 
+            string invoiceReference, //https://i.imgur.com/0HbQ9C6.png
+            string invoiceAddress, //https://i.imgur.com/Ut5eEKD.png
+            bool mandatoryMilageRegistration, 
+            string messageToCustomerService, 
+            PurchaseControlLevel purchaseControlLevel);
+
+
+        void UpdateCard(
+            string cardNumber,
+            string invoiceReference, //https://i.imgur.com/0HbQ9C6.png
+            string invoiceAddress, //https://i.imgur.com/Ut5eEKD.png
+            bool mandatoryMilageRegistration,
+            PurchaseControlLevel purchaseControlLevel);
 
         void ChangePinCode(string cardNumber, string oldPinCode, string newPinCode);
 
         void CloseCard(string cardNumber);
 
-        void UpdateInfoLine(string cardNumber, string cardInfoText);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cardNumber"></param>
+        /// <param name="immediately">either after 14 days or immediately</param>
+        void OrderReplacementCard(string cardNumber, bool immediately /*https://i.imgur.com/9oMDarG.png*/);
 
         IEnumerable<StationDetails> GetDetailsForStations(IEnumerable<Guid> stationIds);
 
@@ -30,14 +52,8 @@ namespace OKQ8.ServiceLayer
 
         /// TODO: 
         /// Kredit limit
-        /// Indkøbskontrol
-        /// Mäterinställningsinslag
-        /// Status
-        /// mm.
-        /// https://gg7ptb.axshare.com/6_1_kortadministration.html
-        /// https://gg7ptb.axshare.com/6_3_kreditlimit.html
-        /// 
     }
+
 
     public class CardSearchResponse
     {

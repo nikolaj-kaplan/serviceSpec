@@ -2,7 +2,7 @@ namespace OKQ8.ServiceLayer.DTO
 {
     public enum CardType
     {
-        /* TODO: Danish types
+        /* TODO: Danish types. Should be changed to scandinavian types. Without spelling mistakes :-).
         CARDTYPE_ALL,
         CARDTYPE_PRIVATE,
         CARDTYPE_CORBORATE,

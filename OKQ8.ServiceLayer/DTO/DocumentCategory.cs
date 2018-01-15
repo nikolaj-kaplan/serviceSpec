@@ -1,4 +1,4 @@
-﻿namespace OKQ8.ServiceLayer
+﻿namespace OKQ8.ServiceLayer.DTO
 {
     public enum DocumentCategory
     {

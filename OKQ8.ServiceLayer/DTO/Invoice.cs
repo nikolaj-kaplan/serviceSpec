@@ -4,7 +4,7 @@ namespace OKQ8.ServiceLayer.DTO
 {
     public class Document
     {
-        public string Id;
+        public Guid Id;
 
         public DateTime IssuedDate;
 

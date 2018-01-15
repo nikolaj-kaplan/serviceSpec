@@ -1,3 +1,4 @@
+using OKQ8.ServiceLayer.DTO;
 using System;
 using System.Collections.Generic;
 
@@ -5,22 +6,22 @@ namespace OKQ8.ServiceLayer
 {
     public interface IInvoice
     {
-        // Invoice App
-
-        getDocumentResponse1 GetDocument(string token, string tsqname, string cicsid);
-        List<Doc2ArchiveSearchResultRow> GetArchiveFromList(string token, IEnumerable<string> accountNumbers, TimePeriod period, ArchiveType invoice);
-        getLastInvoiceResponse1 GetLastInvoiceTransactions(string token, string accountNumber);
-
-        /// TODO Lasse:
-        /// we need a list of invoices with an id for each invoice.
-        /// This id can be used in two services that can 
-        /// either get all transactions included in the invoice 
-        /// or get the invoice as a pdf (byte stream)
-
+        /// <summary>
+        /// Returns a list of documents for populating a table
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="filter"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="direction"></param>
+        /// <returns></returns>
         SearchResponse<Document> GetDocuments(int skip, int take, DocumentFilter filter, DocumentSortOrder orderBy, SortDirection direction);
 
-        // Either send document as object or documentId
-        void ReportError(Document document, DocumentErrorType errorType, string errorDescription);
-    }
+        /// <summary>
+        /// The service returns the pdf as a byte stream. The id comes from the document objects returned by the GetDocuments() service
+        /// </summary>
+        byte[] GetDocument(Guid documentId);
 
+        void ReportError(Guid documentId, DocumentErrorType errorType, string errorDescription);
+    }
 }

@@ -2,13 +2,10 @@ namespace OKQ8.ServiceLayer.DTO
 {
     public class Company
     {
-        public string Name1 { get; set; }
-        public string Name2 { get; set; }
-        public string StreetAddress { get; set; }
-        public string ZipCode { get; set; }
-        public string CountryCode { get; set; }
-        public string Phone { get; set; }
-        public string City { get; set; }
+        public string Name1;
+        public string Name2;
+        public Address Address;
+        public string Phone;
 
         /// <summary>
         /// From dk portal
@@ -24,5 +21,7 @@ namespace OKQ8.ServiceLayer.DTO
         /// From dk portal
         /// </summary>
         public string District { get; set; }
+
+
     }
 }
